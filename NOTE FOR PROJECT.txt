@@ -1,0 +1,2 @@
+database name: onetech
+utf8-general ci
