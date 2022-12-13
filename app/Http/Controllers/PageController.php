@@ -24,7 +24,8 @@ class PageController extends Controller
         $featured_products = Product::where('best_rated', 1)->get();
         $hotdeal_products = Product::where('hot_deal', 1)->get();
         $currentURL = url()->current();
-        return view('home', compact('categories', 'brands', 'subcategories', 'wishlist_count', 'featured_products', 'hotdeal_products', 'currentURL'));
+        $pageTitle = 'home';
+        return view('pages.home', compact('categories', 'brands', 'subcategories', 'wishlist_count', 'featured_products', 'hotdeal_products', 'currentURL', 'pageTitle'));
     }
 
     public function showProducts() {
@@ -35,11 +36,12 @@ class PageController extends Controller
         $wishlists = Wishlist::all();
         $wishlist_count = 0;
         $currentURL = url()->current();
+        $pageTitle = 'products';
         if(Auth::check()) {
             $user_id = Auth::user()->id;
             $wishlist_count = Wishlist::where('user_id', $user_id)->count();
         }
-        return view('pages.products', compact('products', 'categories', 'brands', 'subcategories', 'wishlists', 'wishlist_count', 'currentURL'));
+        return view('pages.products', compact('pageTitle', 'products', 'categories', 'brands', 'subcategories', 'wishlists', 'wishlist_count', 'currentURL'));
     }
 
     public function showProductDetail($id) {
@@ -65,11 +67,12 @@ class PageController extends Controller
         $subcategories = Subcategory::all();
         $wishlist_count = 0;
         $currentURL = url()->current();
+        $pageTitle = 'contact';
         if(Auth::check()) {
             $user_id = Auth::user()->id;
             $wishlist_count = Wishlist::where('user_id', $user_id)->count();
         }
-        return view('pages.contact', compact('categories', 'brands', 'subcategories', 'wishlist_count', 'currentURL'));
+        return view('pages.contact', compact('pageTitle', 'categories', 'brands', 'subcategories', 'wishlist_count', 'currentURL'));
     }
 
     public function showProductBySubcategory($subcategory_id) {
@@ -124,5 +127,19 @@ class PageController extends Controller
             $wishlist_count = Wishlist::where('user_id', $user_id)->count();
         }
         return view('pages.products', compact('products', 'categories', 'brands', 'subcategories', 'wishlists', 'wishlist_count', 'currentURL'));
+    }
+
+    // Blogs
+    public function blogs() 
+    {
+        $pageTitle = 'blogs';
+        return view('pages.blogs', compact('pageTitle'));
+    }
+
+    // Single Blog
+    public function blogDetail() 
+    {
+        $pageTitle = 'blog-detail';
+        return view('pages.blogDetail', compact('pageTitle'));
     }
 }

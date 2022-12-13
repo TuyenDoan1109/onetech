@@ -28,7 +28,7 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
-    <title>{{config('app.name', 'MyEshopAdmin')}}</title>
+    <title>{{config('app.name', 'OneTechAdmin')}}</title>
 
     <!-- vendor css -->
     <link href="{{asset('backend/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -42,7 +42,7 @@
 
     <div class="d-flex align-items-center justify-content-center bg-sl-primary ht-100v">
       <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white">
-        <div class="signin-logo tx-center tx-24 tx-bold tx-inverse">My Eshop <span class="tx-info tx-normal">Admin</span></div>
+        <div class="signin-logo tx-center tx-24 tx-bold tx-inverse">OneTech <span class="tx-info tx-normal">Admin</span></div>
         <br>
         <form method="POST" action="{{ route('admin.login') }}">
           @csrf

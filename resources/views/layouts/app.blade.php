@@ -1,599 +1,614 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>MyEShop</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+	<title>OneTech | {{ucfirst($pageTitle)}}</title>
 
-    <!-- Favicon -->
-    <link href="{{asset('img/favicon.ico')}}" rel="icon">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="OneTech shop project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="{{asset('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
-    <link href="{{asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
-
-    <!-- Ajax -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+	@switch($pageTitle)
+		@case('home')
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/bootstrap4/bootstrap.min.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/animate.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/slick-1.8.0/slick.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/main_styles.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/responsive.css')}}">
+			@break
+		@case('products')
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/bootstrap4/bootstrap.min.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/animate.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/jquery-ui-1.12.1.custom/jquery-ui.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/shop_styles.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/shop_responsive.css')}}">
+			@break
+		@case('contact')
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/bootstrap4/bootstrap.min.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/contact_styles.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/contact_responsive.css')}}">
+			@break
+		@case('blogs')
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/bootstrap4/bootstrap.min.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/animate.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/blog_styles.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/blog_responsive.css')}}">
+			@break
+		@case('blog-detail')
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/bootstrap4/bootstrap.min.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/OwlCarousel2-2.2.1/animate.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/blog_single_styles.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/blog_single_responsive.css')}}">
+			@break
+		@case('cart')
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/bootstrap4/bootstrap.min.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/cart_styles.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/cart_responsive.css')}}">
+			@break
+		@case('wishlist')
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/bootstrap4/bootstrap.min.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/cart_styles.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('frontend/styles/cart_responsive.css')}}">
+			@break
+		@default
+	@endswitch
 </head>
 
 <body>
-    
-    <!-- Topbar Start -->
-    <div class="container-fluid">
-        <div class="row bg-secondary py-1 px-xl-5">
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="">About</a>
-                    <a class="text-body mr-3" href="">Contact</a>
-                    <a class="text-body mr-3" href="">Help</a>
-                    <a class="text-body mr-3" href="">FAQs</a>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <div class="btn-group">
-                        @guest
-                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"><i class="fa-solid fa-user mr-2"></i> Guest</button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="{{route('login')}}">Sign in</a>
-                                <a class="dropdown-item" href="{{route('register')}}">Register</a>
-                            </div>
-                        @else
-                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"><i class="fa-solid fa-user mr-2"></i>{{ Auth::user()->name }}</button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+<div class="super_container">
+	
+	<!-- Header -->
+	<header class="header">
+		<!-- Top Bar -->
+		<div class="top_bar">
+			<div class="container">
+				<div class="row">
+					<div class="col d-flex flex-row">
+						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{{asset('frontend/images/phone.png')}}" alt=""></div>+84 936 827 526</div>
+						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{{asset('frontend/images/mail.png')}}" alt=""></div><a href="mailto:doantuyen90@gmail.com">doantuyen90@gmail.com</a></div>
+						<div class="top_bar_content ml-auto">
+							<div class="top_bar_menu">
+								<ul class="standard_dropdown top_bar_dropdown">
+									<li>
+										<a href="#">English<i class="fas fa-chevron-down"></i></a>
+										<ul>
+											<li><a href="#">Italian</a></li>
+											<li><a href="#">Spanish</a></li>
+											<li><a href="#">Japanese</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">$ US dollar<i class="fas fa-chevron-down"></i></a>
+										<ul>
+											<li><a href="#">EUR Euro</a></li>
+											<li><a href="#">GBP British Pound</a></li>
+											<li><a href="#">JPY Japanese Yen</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="top_bar_user">
+								<div class="user_icon"><img src="{{asset('frontend/images/user.svg')}}" alt=""></div>
+								<div><a href="{{route('register')}}">Register</a></div>
+								<div><a href="{{route('login')}}">Login</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
 
-                                <a class="dropdown-item" href="{{route('wishlist.index', Auth::user()->id)}}">Wishlist</a>
-                            </div>
-                        @endguest
-                        
-                    </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">EUR</button>
-                            <button class="dropdown-item" type="button">GBP</button>
-                            <button class="dropdown-item" type="button">CAD</button>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AR</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-            <div class="col-lg-4">
-                <a href="/" class="text-decoration-none">
-                    <span class="h1 text-primary bg-dark px-2">My</span>
-                    <span class="h1 text-dark bg-primary px-2 ml-n1">EShop</span>
-                </a>
-            </div>
-            <div class="col-lg-4 col-6 text-left searchit" style="position: relative">
-                <form action="{{route('search')}}" method="POST">
-                    @csrf
-                    <div class="input-group">
-                        <input id="search" type="text" class="form-control" name="searchkey" placeholder="Search for products...">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fa fa-search"></i>
-                        </button> 
-                    </div>
-                </form>
-                <div id="result-search-ajax" style="width: 444px; max-height: 300px; overflow: auto;">
-                    <ul class="list-group" id="result-list" style="display:none">
+		<!-- Header Main -->
+		<div class="header_main">
+			<div class="container">
+				<div class="row">
 
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-6 text-right">
-                <p class="m-0">Customer Service</p>
-                <h5 class="m-0">0936 827 526</h5>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
+					<!-- Logo -->
+					<div class="col-lg-2 col-sm-3 col-3 order-1">
+						<div class="logo_container">
+							<div class="logo"><a href="/">OneTech</a></div>
+						</div>
+					</div>
 
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-dark mb-30">
-        <div class="row px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
-                    <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
-                    <i class="fa fa-angle-down text-dark"></i>
-                </a>
-                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
-                    <div class="navbar-nav w-100">
-                        @foreach($categories as $category)
-                            <div class="nav-item dropdown dropright">
-                                <a href="/product-by-category/{{$category->id}}" class="nav-link dropdown-toggle" data-toggle="dropdown">{{$category->category_name}}<i class="fa fa-angle-right float-right mt-1"></i></a>
-                                <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                                    @foreach($subcategories as $subcategory)
-                                        @if($subcategory->category_id == $category->id)                                           
-                                            <a href="/product-by-subcategory/{{$subcategory->id}}" class="dropdown-item">{{$subcategory->subcategory_name}}</a>
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endforeach
-                        
-                    </div>
-                </nav>
-            </div>
-            <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
-                        <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
-                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
-                    </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto py-0">
-                            <a href="/" class="nav-item nav-link
-                            @if($currentURL == 'http://myeshop.test')
-                                active
-                            @endif
-                            ">Home</a>
+					<!-- Search -->
+					<div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+						<div class="header_search">
+							<div class="header_search_content">
+								<div class="header_search_form_container">
+									<form action="#" class="header_search_form clearfix">
+										<input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+										<div class="custom_dropdown">
+											<div class="custom_dropdown_list">
+												<span class="custom_dropdown_placeholder clc">All Categories</span>
+												<i class="fas fa-chevron-down"></i>
+												<ul class="custom_list clc">
+													<li><a class="clc" href="#">All Categories</a></li>
+													<li><a class="clc" href="#">Computers</a></li>
+													<li><a class="clc" href="#">Laptops</a></li>
+													<li><a class="clc" href="#">Cameras</a></li>
+													<li><a class="clc" href="#">Hardware</a></li>
+													<li><a class="clc" href="#">Smartphones</a></li>
+												</ul>
+											</div>
+										</div>
+										<button type="submit" class="header_search_button trans_300" value="Submit"><img src="{{asset('frontend/images/search.png')}}" alt=""></button>
+									</form>
+								</div>
+							</div>
+						</div>      
+					</div>
 
-                            <a href="/products" class="nav-item nav-link 
-                            @if($currentURL == 'http://myeshop.test/products')
-                                active
-                            @endif
-                            ">All Products</a>
+					<!-- Wishlist -->
+					<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+						<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+							<div class="wishlist d-flex flex-row align-items-center justify-content-end">
+								<div class="wishlist_icon"><img src="{{asset('frontend/images/heart.png')}}" alt=""></div>
+								<div class="wishlist_content">
+									<div class="wishlist_text"><a href="{{route('wishlist.index')}}">Wishlist</a></div>
+									<div class="wishlist_count">115</div>
+								</div>
+							</div>
 
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
-                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="{{route('cart.index')}}" class="dropdown-item 
-                                    @if($currentURL == 'http://myeshop.test/cart/index')
-                                        active
-                                    @endif
-                                    ">Shopping Cart</a>
+							<!-- Cart -->
+							<div class="cart">
+								<div class="cart_container d-flex flex-row align-items-center justify-content-end">
+									<div class="cart_icon">
+										<img src="{{asset('frontend/images/cart.png')}}" alt="">
+										<div class="cart_count"><span>10</span></div>
+									</div>
+									<div class="cart_content">
+										<div class="cart_text"><a href="{{route('cart.index')}}">Cart</a></div>
+										<div class="cart_price">$85</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Main Navigation -->
+		<nav class="main_nav">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						
+						<div class="main_nav_content d-flex flex-row">
 
-                                    <a href="{{route('checkout')}}" class="dropdown-item
-                                    @if($currentURL == 'http://myeshop.test/checkout')
-                                        active
-                                    @endif
-                                    ">Checkout</a>
-                                </div>
-                            </div>
-                            <a href="{{route('contact')}}" class="nav-item nav-link
-                            @if($currentURL == 'http://myeshop.test/contact')
-                                active
-                            @endif
-                            ">Contact</a>
-                        </div>
-                        <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                            @auth
-                                <a href="{{route('wishlist.index')}}" class="btn px-0 ml-2">
-                                    <i class="fas fa-heart text-primary"></i>
-                                    <span id="wishlist-count" class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">{{$wishlist_count}}</span>
-                                </a>
-                            @endauth
-                            <a href="{{route('cart.index')}}" class="btn px-0 ml-3">
-                                <i class="fas fa-shopping-cart text-primary"></i>
-                                <span id="cart-count" class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">{{Cart::count()}}</span>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <!-- Navbar End -->
+							<!-- Categories Menu -->
+							<div class="cat_menu_container">
+								<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+									<div class="cat_burger"><span></span><span></span><span></span></div>
+									<div class="cat_menu_text">categories</div>
+								</div>
 
+								<ul class="cat_menu">
+									<li><a href="#">Computers & Laptops <i class="fas fa-chevron-right ml-auto"></i></a></li>
+									<li><a href="#">Cameras & Photos<i class="fas fa-chevron-right"></i></a></li>
+									<li class="hassubs">
+										<a href="https://tinhte.vn/">Hardware<i class="fas fa-chevron-right"></i></a>
+										<ul>
+											<li class="hassubs">
+												<a href="https://vnexpress.net/">Menu Item level 2<i class="fas fa-chevron-right"></i></a>
+												<ul>
+													<li><a href="https://www.google.com/">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+													<li><a href="#">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+													<li><a href="#">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+													<li><a href="#">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+												</ul>
+											</li>
+											<li><a href="#">Menu Item level 2<i class="fas fa-chevron-right"></i></a></li>
+											<li><a href="#">Menu Item level 2<i class="fas fa-chevron-right"></i></a></li>
+											<li><a href="#">Menu Item level 2<i class="fas fa-chevron-right"></i></a></li>
+										</ul>
+									</li>
+									<li><a href="#">Smartphones & Tablets<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="#">TV & Audio<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="#">Gadgets<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="#">Car Electronics<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="#">Video Games & Consoles<i class="fas fa-chevron-right"></i></a></li>
+									<li><a href="#">Accessories<i class="fas fa-chevron-right"></i></a></li>
+								</ul>
+							</div>
+
+							<!-- Main Nav Menu -->
+							<div class="main_nav_menu ml-auto">
+								<ul class="standard_dropdown main_nav_dropdown">
+									<li><a href="/">Home<i class="fas fa-chevron-down"></i></a></li>
+									<li class="hassubs">
+										<a href="#">Super Deals<i class="fas fa-chevron-down"></i></a>
+										<ul>
+											<li>
+												<a href="#">Menu Item level 2<i class="fas fa-chevron-down"></i></a>
+												<ul>
+													<li><a href="#">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+													<li><a href="#">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+													<li><a href="#">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+												</ul>
+											</li>
+											<li><a href="#">Menu Item level 2<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="#">Menu Item level 2<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="#">Menu Item level 2<i class="fas fa-chevron-down"></i></a></li>
+										</ul>
+									</li>
+									<li class="hassubs">
+										<a href="#">Featured Brands<i class="fas fa-chevron-down"></i></a>
+										<ul>
+											<li>
+												<a href="#">Menu Item level 2<i class="fas fa-chevron-down"></i></a>
+												<ul>
+													<li><a href="#">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+													<li><a href="#">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+													<li><a href="#">Menu Item level 3<i class="fas fa-chevron-right"></i></a></li>
+												</ul>
+											</li>
+											<li><a href="#">Menu Item level 2<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="#">Menu Item level 2<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="#">Menu Item level 2<i class="fas fa-chevron-down"></i></a></li>
+										</ul>
+									</li>
+									<li class="hassubs">
+										<a href="#">Pages<i class="fas fa-chevron-down"></i></a>
+										<ul>
+											<li><a href="/products">Products<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="{{route('blogs')}}">Blogs<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="{{route('blog-detail')}}">Blog Detail<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="{{route('cart.index')}}">Cart<i class="fas fa-chevron-down"></i></a></li>
+											<li><a href="{{route('contact')}}">Contact<i class="fas fa-chevron-down"></i></a></li>
+										</ul>
+									</li>
+									<li><a href="{{route('blogs')}}">Blogs<i class="fas fa-chevron-down"></i></a></li>
+									<li><a href="{{route('contact')}}">Contact<i class="fas fa-chevron-down"></i></a></li>
+								</ul>
+							</div>
+
+							<!-- Menu Trigger -->
+							<div class="menu_trigger_container ml-auto">
+								<div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+									<div class="menu_burger">
+										<div class="menu_trigger_text">menu</div>
+										<div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- Menu -->
+		<div class="page_menu">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						
+						<div class="page_menu_content">
+							
+							<div class="page_menu_search">
+								<form action="#">
+									<input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
+								</form>
+							</div>
+							<ul class="page_menu_nav">
+								<li class="page_menu_item has-children">
+									<a href="#">Language<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">English<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Italian<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Spanish<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Japanese<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Currency<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">US Dollar<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">EUR Euro<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">GBP British Pound<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">JPY Japanese Yen<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item">
+									<a href="#">Home<i class="fa fa-angle-down"></i></a>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">Super Deals<i class="fa fa-angle-down"></i></a></li>
+										<li class="page_menu_item has-children">
+											<a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+											<ul class="page_menu_selection">
+												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+											</ul>
+										</li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Featured Brands<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">Featured Brands<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Trending Styles<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">Trending Styles<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item"><a href="blog.html">blog<i class="fa fa-angle-down"></i></a></li>
+								<li class="page_menu_item"><a href="contact.html">contact<i class="fa fa-angle-down"></i></a></li>
+							</ul>
+							
+							<div class="menu_contact">
+								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('frontend/images/phone_white.png')}}" alt=""></div>+38 068 005 3570</div>
+								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{asset('frontend/images/mail_white.png')}}" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+	
     @yield('content')
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
-        <div class="row px-xl-5 pt-5">
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <h5 class="text-secondary text-uppercase mb-4">Get In Touch</h5>
-                <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Quick Shop</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
-                        <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Your Email Address">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary">Sign Up</button>
-                                </div>
-                            </div>
-                        </form>
-                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
-                        <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
-            <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-secondary">
-                    &copy; <a class="text-primary" href="#">Domain</a>. All Rights Reserved. Designed
-                    by
-                    <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
-                </p>
-            </div>
-            <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="{{asset('frontend/img/payments.png')}}" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+	<!-- Newsletter -->
+	<div class="newsletter">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
+						<div class="newsletter_title_container">
+							<div class="newsletter_icon"><img src="{{asset('frontend/images/send.png')}}" alt=""></div>
+							<div class="newsletter_title">Sign up for Newsletter</div>
+							<div class="newsletter_text"><p>...and receive %20 coupon for first shopping.</p></div>
+						</div>
+						<div class="newsletter_content clearfix">
+							<form action="#" class="newsletter_form">
+								<input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
+								<button class="newsletter_button">Subscribe</button>
+							</form>
+							<div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('frontend/lib/easing/easing.min.js')}}"></script>
-    <script src="{{asset('frontend/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+				<div class="col-lg-3 footer_col">
+					<div class="footer_column footer_contact">
+						<div class="logo_container">
+							<div class="logo"><a href="#">OneTech</a></div>
+						</div>
+						<div class="footer_title">Got Question? Call Us 24/7</div>
+						<div class="footer_phone">+38 068 005 3570</div>
+						<div class="footer_contact_text">
+							<p>17 Princess Road, London</p>
+							<p>Grester London NW18JR, UK</p>
+						</div>
+						<div class="footer_social">
+							<ul>
+								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+								<li><a href="#"><i class="fab fa-google"></i></a></li>
+								<li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-    <!-- Contact Javascript File -->
-    <script src="{{asset('frontend/mail/jqBootstrapValidation.min.js')}}"></script>
-    <script src="{{asset('frontend/mail/contact.js')}}"></script>
+				<div class="col-lg-2 offset-lg-2">
+					<div class="footer_column">
+						<div class="footer_title">Find it Fast</div>
+						<ul class="footer_list">
+							<li><a href="#">Computers & Laptops</a></li>
+							<li><a href="#">Cameras & Photos</a></li>
+							<li><a href="#">Hardware</a></li>
+							<li><a href="#">Smartphones & Tablets</a></li>
+							<li><a href="#">TV & Audio</a></li>
+						</ul>
+						<div class="footer_subtitle">Gadgets</div>
+						<ul class="footer_list">
+							<li><a href="#">Car Electronics</a></li>
+						</ul>
+					</div>
+				</div>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+				<div class="col-lg-2">
+					<div class="footer_column">
+						<ul class="footer_list footer_list_2">
+							<li><a href="#">Video Games & Consoles</a></li>
+							<li><a href="#">Accessories</a></li>
+							<li><a href="#">Cameras & Photos</a></li>
+							<li><a href="#">Hardware</a></li>
+							<li><a href="#">Computers & Laptops</a></li>
+						</ul>
+					</div>
+				</div>
 
-    
-    <script type="text/javascript">
-        $(document).ready(function() {
+				<div class="col-lg-2">
+					<div class="footer_column">
+						<div class="footer_title">Customer Care</div>
+						<ul class="footer_list">
+							<li><a href="#">My Account</a></li>
+							<li><a href="#">Order Tracking</a></li>
+							<li><a href="#">Wish List</a></li>
+							<li><a href="#">Customer Services</a></li>
+							<li><a href="#">Returns / Exchange</a></li>
+							<li><a href="#">FAQs</a></li>
+							<li><a href="#">Product Support</a></li>
+						</ul>
+					</div>
+				</div>
 
-            $('.loop').owlCarousel({
-                center: true,
-                items:2,
-                loop:true,
-                margin:10,
-                responsive:{
-                    600:{
-                        items:4
-                    }
-                }
-            });
+			</div>
+		</div>
+	</footer>
 
-            // Add to Wishlist Ajax 
-            $('.addWishlist').on('click', function(event) {
-                event.preventDefault();
-                var id = $(this).closest('.product-item-ajax').data("id");
-                // alert(id);
-                $.ajax({
-                    url: "/wishlist/add/" + id,
-                    type: "GET",
-                    datType: "json",
-                    success: function(data) {
-                        var wishlistCountElement = $('#wishlist-count');
-                        var wishlist_count = data['wishlist_count'];
-                        wishlistCountElement.html(wishlist_count);
-                        const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        onOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer)
-                            toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                        });
-    
-                        if($.isEmptyObject(data.error)) {   
-                            Toast.fire({
-                            icon: 'success',
-                            title: data.success
-                            })
-                        } else {
-                            Toast.fire({
-                            icon: 'error',
-                            title: data.error
-                            })
-                        }
-                    }
-                });
-            });  
-            
-            // Add to Cart Ajax 
-            $('.addToCart').on('click', function(event) {
-                event.preventDefault();
-                var ele = $(this);
-                $.ajax({
-                    url: "/cart/add",
-                    type: "POST",
-                    datType: "json",
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        product_id: ele.closest('.product-item-ajax').data("id"),
-                        product_color: $('#color').find(":selected").val(),
-                        product_qty: $('#qty').val()
-                    },
-                    success: function(data) {
-                        var cartCountElement = $("#cart-count");
-                        var cartCount = Number(data['cartCount']);
-                        cartCountElement.html(cartCount);
+	<!-- Copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					
+					<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
+						<div class="copyright_content"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</div>
+						<div class="logos ml-sm-auto">
+							<ul class="logos_list">
+								<li><a href="#"><img src="{{asset('frontend/images/logos_1.png')}}" alt=""></a></li>
+								<li><a href="#"><img src="{{asset('frontend/images/logos_2.png')}}" alt=""></a></li>
+								<li><a href="#"><img src="{{asset('frontend/images/logos_3.png')}}" alt=""></a></li>
+								<li><a href="#"><img src="{{asset('frontend/images/logos_4.png')}}" alt=""></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                        var wishlistElement = $('#wishlist');
-                        if(wishlistElement) {
-                            var itemToRemove = ele.parents("tr");
-                            itemToRemove.remove();
-                            var wishlistCountElement = $('#wishlist-count');
-                            var wishlist_count = data['wishlist_count'];
-                            wishlistCountElement.html(wishlist_count);
-                            if(wishlist_count == 0) {
-                                wishlistElement.html('<p class="text-center">Your wishlist is empty!</p >');
-                            }
-                        }
-                        const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        onOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer)
-                            toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                        });
-    
-                        if($.isEmptyObject(data.error)) {   
-                            Toast.fire({
-                            icon: 'success',
-                            title: data.success
-                            })
-                        } else {
-                            Toast.fire({
-                            icon: 'error',
-                            title: data.error
-                            })
-                        }
-                    }
-                });
-            });  
-            
-            // Update Cart Quantity Ajax
-            $(".qty").change(function(e) {
-                e.preventDefault();
-                var ele = $(this);
-                $.ajax({
-                    url: '{{ route('cart.update') }}',
-                    method: "patch",
-                    data: {
-                        _token: '{{ csrf_token() }}', 
-                        rowId: ele.parents("tr").attr("data-id"), 
-                        qty: ele.parents("tr").find(".qty").val()
-                    },
-                    success: function(response) {
-                        var subtotalElement = ele.parents("tr").find(".total");
-                        var subtotal = response['result']['price'] * response['result']['qty'];
-                        var initialElement = $("#initial");
-                        var initial = Number(response['initial']);
-                        var taxElement = $("#tax");
-                        var tax = Number(response['tax']);
-                        var totalElement = $("#total");
-                        var total = Number(response['total']) + Number(response['shipping_fee']);
-                        var cartCountElement = $("#cart-count");
-                        var cartCount = Number(response['cartCount']);
-                        subtotalElement.html(subtotal.toLocaleString('en-US') + ' VNĐ');
-                        initialElement.html(initial.toLocaleString('en-US') + ' VNĐ');
-                        taxElement.html(tax.toLocaleString('en-US') + ' VNĐ');
-                        totalElement.html(total.toLocaleString('en-US') + ' VNĐ');
-                        cartCountElement.html(cartCount);
-                    } 
-                });
-            });
+</div>
 
-            // Delete Cart Item Ajax
-            $(".removeCartItem").click(function(e) {
-                e.preventDefault();
-                var ele = $(this);
-                var rowId = ele.parents("tr").attr("data-id");
-                $.ajax({
-                    url: '/cart/remove/' + rowId,
-                    method: "delete",
-                    data: {
-                        _token: '{{ csrf_token() }}'
-                        // rowId: ele.parents("tr").attr("data-id"), 
-                    },
-                    success: function(result) {
-                        var cartCount = Number(result['cartCount']);
-                        var cartCountElement = $("#cart-count");
-                        cartCountElement.html(cartCount);
-                        var itemToRemove = ele.parents("tr");
-                        itemToRemove.remove();
-                        var initialElement = $("#initial");
-                        var initial = Number(result['initial']);
-                        var taxElement = $("#tax");
-                        var tax = Number(result['tax']);
-                        var totalElement = $("#total");
-                        var total = Number(result['total']) + Number(result['shipping_fee']);
-                        initialElement.html(initial.toLocaleString('en-US') + ' VNĐ');
-                        taxElement.html(tax.toLocaleString('en-US') + ' VNĐ');
-                        totalElement.html(total.toLocaleString('en-US') + ' VNĐ');
-                        if(cartCount == 0) {
-                            var tableElement = $("#table");
-                            tableElement.html('<p class="text-center">Your cart is empty!</p >');
-                        }   
-                        const Toast = Swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            timerProgressBar: true,
-                            onOpen: (toast) => {
-                                toast.addEventListener('mouseenter', Swal.stopTimer)
-                                toast.addEventListener('mouseleave', Swal.resumeTimer)
-                            }
-                        });
-                        if($.isEmptyObject(result.error)) {   
-                            Toast.fire({
-                            icon: 'success',
-                            title: result.success
-                            })
-                        } else {
-                            Toast.fire({
-                            icon: 'error',
-                            title: result.error
-                            })
-                        }
-                    }
-                });
-            });
-            
-            // Delete Product on Wishlist Ajax 
-            $('.delete-product-wishlist').on('click', function(event) {
-                var ele = $(this);
-                var id = ele.parents("tr").attr("data-id");
+@switch($pageTitle)
+	@case('home')
+		<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+		<script src="{{asset('frontend/styles/bootstrap4/popper.js')}}"></script>
+		<script src="{{asset('frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/greensock/TweenMax.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/greensock/ScrollToPlugin.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
+		<script src="{{asset('frontend/plugins/slick-1.8.0/slick.js')}}"></script>
+		<script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
+		<script src="{{asset('frontend/js/custom.js')}}"></script>
+		@break
+	@case('products')
+		<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+		<script src="{{asset('frontend/styles/bootstrap4/popper.js')}}"></script>
+		<script src="{{asset('frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/greensock/TweenMax.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/greensock/ScrollToPlugin.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
+		<script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
+		<script src="{{asset('frontend/plugins/Isotope/isotope.pkgd.min.js')}}"></script>
+		<script src="{{asset('frontend/plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
+		<script src="{{asset('frontend/plugins/parallax-js-master/parallax.min.js')}}"></script>
+		<script src="{{asset('frontend/js/shop_custom.js')}}"></script>
+		@break
+		@case('contact')
+			<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/popper.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TweenMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/ScrollToPlugin.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+			<script src="{{asset('frontend/js/contact_custom.js')}}"></script>
+		@break
+		@case('blogs')
+			<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/popper.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TweenMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/ScrollToPlugin.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
+			<script src="{{asset('frontend/plugins/parallax-js-master/parallax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
+			<script src="{{asset('frontend/js/blog_custom.js')}}"></script>
+		@break
+		@case('blog-detail')
+			<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/popper.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TweenMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/ScrollToPlugin.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
+			<script src="{{asset('frontend/plugins/parallax-js-master/parallax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
+			<script src="{{asset('frontend/js/blog_single_custom.js')}}"></script>
+		@break
+		@case('cart')
+			<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/popper.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TweenMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/ScrollToPlugin.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
+			<script src="{{asset('frontend/js/cart_custom.js')}}"></script>
+		@break
+		@case('wishlist')
+			<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/popper.js')}}"></script>
+			<script src="{{asset('frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TweenMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/greensock/ScrollToPlugin.min.js')}}"></script>
+			<script src="{{asset('frontend/plugins/easing/easing.js')}}"></script>
+			<script src="{{asset('frontend/js/cart_custom.js')}}"></script>
+		@break
+	@default
+@endswitch
 
-                $.ajax({
-                    url: "/wishlist/remove/" + id,
-                    method: "delete",
-                    datType: "json",
-                    data: {
-                        _token: '{{ csrf_token() }}'
-                    },
-                    success: function(data) {
-                        var wishlistCountElement = $('#wishlist-count');
-                        var wishlist_count = data['wishlist_count'];
-                        wishlistCountElement.html(wishlist_count);
-                        var itemToRemove = ele.parents("tr");
-                        itemToRemove.remove();
-                        if(wishlist_count == 0) {
-                            var wishlistElement = $('#wishlist');
-                            wishlistElement.html('<p class="text-center">Your wishlist is empty!</p >');
-                        }
-                        const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        onOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer)
-                            toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                        });
-
-                        if($.isEmptyObject(data.error)) {   
-                            Toast.fire({
-                            icon: 'success',
-                            title: data.success
-                            })
-                        } else {
-                            Toast.fire({
-                            icon: 'error',
-                            title: data.error
-                            })
-                        }
-                    }
-                });
-            }); 
-
-            // Search Products Ajax 
-            $('#search').keyup(function() {
-                var searchkey = $('#search').val().trim();
-                if(searchkey == "") {
-                    $("#result-search-ajax").html("");
-                    $('#result-list').hide();
-                } else {
-                    $.ajax({
-                        url: "/searchajax",
-                        type: "POST",
-                        datType: "json",
-                        data: {
-                            _token: '{{ csrf_token() }}',
-                            searchkey: searchkey
-                        },
-                        success: function(data) {
-                            $('#result-search-ajax').empty().html(data);
-                            $('#result-search-ajax').css({
-                                "position": "absolute",
-                                "z-index": "9999"
-                            });
-                            $('#result-list').show();
-                        }
-                    });
-                }
-            }); 
-
-            // Toggle Dropdown Search Suggestion
-            $('#search').on('blur', function(e){
-                $("#result-search-ajax").fadeOut(500);
-            });
-
-            $('#search').on('focus', function(){
-                $("#result-search-ajax").show();
-            });
-
-        });
-    </script>
-
-    <!-- Template Javascript -->
-    <script src="{{asset('frontend/js/main.js')}}"></script>
-
-    @include('sweetalert::alert')
 </body>
 
 </html>

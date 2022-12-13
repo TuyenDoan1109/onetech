@@ -49,7 +49,7 @@ class CartController extends Controller
         ]);
     }
 
-    public function showCart() {
+    public function indexCart() {
         $categories = Category::all();
         $brands = Brand::all();
         $subcategories = Subcategory::all();
@@ -57,11 +57,12 @@ class CartController extends Controller
         $shipping_fee = 20000;
         $wishlist_count = 0;
         $currentURL = url()->current();
+        $pageTitle = 'cart';
         if(Auth::check()) {
             $user_id = Auth::user()->id;
             $wishlist_count = Wishlist::where('user_id', $user_id)->count();
         }
-        return view('pages.showCart', compact('categories', 'brands', 'subcategories', 'contents', 'shipping_fee', 'wishlist_count', 'currentURL'));
+        return view('pages.indexCart', compact('pageTitle', 'categories', 'brands', 'subcategories', 'contents', 'shipping_fee', 'wishlist_count', 'currentURL'));
     }
 
     public function removeCartItem(Request $request, $rowId) {

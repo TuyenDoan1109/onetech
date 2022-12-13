@@ -19,12 +19,42 @@ class CategorySeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'category_name' => 'Laptop',
+                'category_name' => 'Laptop & PC',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'category_name' => 'Tablet',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_name' => 'Stereo',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_name' => 'Smart Watch',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_name' => 'Smart Home',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_name' => 'Tivi',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_name' => 'PC & Laptop Accessories',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_name' => 'Smartphone Accessories',
                 'created_at' => now(),
                 'updated_at' => now()
             ],

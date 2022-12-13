@@ -9,7 +9,7 @@
         <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
         <meta name="author" content="ThemePixels">
 
-        <title>{{config('app.name', 'MyEshopAdmin')}}</title>
+        <title>OneTech | Admin</title>
 
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -32,7 +32,7 @@
     <body>
 
         <!-- ########## START: LEFT PANEL ########## -->
-        <div class="sl-logo"><a href="{{route('admin.dashboard')}}"><i class="icon ion-android-star-outline"></i> My Eshop</a></div>
+        <div class="sl-logo"><a href="{{route('admin.dashboard')}}"><i class="icon ion-android-star-outline"></i> One Tech</a></div>
         <div class="sl-sideleft">
         <div class="sl-sideleft-menu">
 

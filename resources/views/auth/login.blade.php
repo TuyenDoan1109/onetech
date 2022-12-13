@@ -4,61 +4,82 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>User Login</title>
+	<title>OneTech | Login</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		.gradient-custom-3 {
+		/* fallback for old browsers */
+		background: #84fab0;
+
+		/* Chrome 10-25, Safari 5.1-6 */
+		background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+
+		/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+		}
+		.gradient-custom-4 {
+		/* fallback for old browsers */
+		background: #84fab0;
+
+		/* Chrome 10-25, Safari 5.1-6 */
+		background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+		/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+		}
+	</style>
 </head>
 <body>
-	<section class="vh-100" style="background-color: #508bfc; padding-bottom: 300px">
-		<div class="container py-5 h-100">
-		  	<div class="row d-flex justify-content-center align-items-center h-100">
-				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
-					<div class="card shadow-2-strong" style="border-radius: 1rem;">
-						<div class="card-body p-5 text-center">
-		
-							<h3 class="mb-5">User Login</h3>
-							<form action="{{ route('login') }}" method="post">
+	<section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+		<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+			<div class="container h-100">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-9 col-lg-7 col-xl-6">
+					<div class="card" style="border-radius: 15px;">
+						<div class="card-body p-5">
+							<h2 class="text-uppercase text-center mb-5">User Login</h2>
+							<form method="POST" action="{{ route('login') }}">
 								@csrf
-								<input placeholder="Enter Your Email..." id="email" type="text" 
-								class="form-control mb-4 @error('email') is-invalid @enderror" name="email" 
-								value="{{ old('email') }}"  autocomplete="email" autofocus>
+								<input placeholder="Your email..." id="email" type="email" 
+								class="form-control mb-3 @error('email') is-invalid @enderror" 
+								name="email" value="{{ old('email') }}" 
+								required autocomplete="email">
 								@error('email')
-									<span class="invalid-feedback mb-4" role="alert">
+									<span class="invalid-feedback" role="alert">
 										<strong>{{ $message }}</strong>
 									</span>
 								@enderror
 
-								<input placeholder="Enter Your Password..." id="password" type="password" 
-								class="form-control mb-4 @error('password') is-invalid @enderror" name="password" 
-								 autocomplete="password">
+								<input placeholder="Your password..." id="password" type="password" 
+								class="form-control mb-3 @error('password') is-invalid @enderror" 
+								name="password" required autocomplete="new-password">
 								@error('password')
-									<span class="invalid-feedback mb-4" role="alert">
+									<span class="invalid-feedback" role="alert">
 										<strong>{{ $message }}</strong>
 									</span>
 								@enderror
-								<div class="form-check d-flex justify-content-start mb-4">
-									<input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-									<label class="form-check-label" for="form1Example3"> Remember me</label>
-								</div>
-								<button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-							</form>
 
-							<hr class="my-4">
-				
-							<button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
-								type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
-							<button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
-								type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
-	  
+								<div class="form-check d-flex mb-3">
+									<input class="form-check-input mr-3" type="checkbox" value="" id="form2Example3cg" />
+									<label class="form-check-label" for="form2Example3g">Remember Me</label>
+								</div>
+
+								<div class="d-flex justify-content-center">
+									<button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+								</div>
+
+								<p class="text-center text-muted mt-5 mb-0">Doesn't have an account? 
+									<a href="{{route('register')}}" class="fw-bold text-body"><u>Register here</u></a>
+								</p>
+							</form>
 						</div>
-			  		</div>
+					</div>
 				</div>
-		  	</div>
+			</div>
 		</div>
 	</section>
 </body>
 </html>
-
-
 
 
 

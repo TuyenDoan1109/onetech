@@ -48,6 +48,76 @@ class BrandSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'brand_name' => 'Asus',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'HP',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'DELL',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'SONY',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'MSI',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'Acer',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'LG',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'Gigabyte',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'Intel',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'Microsoft',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'Fujitsu',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'Logitech',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'Toshiba',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'brand_name' => 'Lenovo',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
 
         ]);
 

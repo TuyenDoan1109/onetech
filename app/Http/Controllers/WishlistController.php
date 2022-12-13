@@ -42,7 +42,8 @@ class WishlistController extends Controller
         $wishlist_items = Wishlist::WishlistItems();
         $wishlist_count = $wishlist_items->count();
         $currentURL = url()->current();
-        return view('pages.indexWishlist', compact('categories', 'brands', 'subcategories', 'wishlist_items', 'wishlist_count', 'currentURL'));
+        $pageTitle = 'wishlist';
+        return view('pages.indexWishlist', compact('pageTitle', 'categories', 'brands', 'subcategories', 'wishlist_items', 'wishlist_count', 'currentURL'));
     }
 
     public function removeWishlist(Request $request, $product_id) {

@@ -82,9 +82,15 @@ Route::delete('/wishlist/remove/{product_id}', 'WishlistController@removeWishlis
 // Contact
 Route::get('/contact', 'PageController@showContact')->name('contact');
 
+// Blogs
+Route::get('/blogs', 'PageController@blogs')->name('blogs');
+
+// Blog Detail
+Route::get('/blog-detail', 'PageController@blogDetail')->name('blog-detail');
+
 // Cart
 Route::post('/cart/add', 'CartController@addToCart')->name('cart.add');
-Route::get('/cart/index', 'CartController@showCart')->name('cart.index');
+Route::get('/cart/index', 'CartController@indexCart')->name('cart.index');
 Route::delete('/cart/remove/{rowId}', 'CartController@removeCartItem')->name('cart.remove');
 Route::patch('/cart/update', 'CartController@updateCart')->name('cart.update'); 
 

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>MyEshop | Register</title>
+	<title>OneTech | Register</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style>
 		.gradient-custom-3 {
@@ -37,7 +37,7 @@
 				<div class="col-12 col-md-9 col-lg-7 col-xl-6">
 					<div class="card" style="border-radius: 15px;">
 						<div class="card-body p-5">
-							<h2 class="text-uppercase text-center mb-5">Create an account</h2>
+							<h2 class="text-uppercase text-center mb-5">User Register</h2>
 							<form method="POST" action="{{ route('register') }}">
 								@csrf
 								<input placeholder="Your name..." id="name" type="text" 
